@@ -1,0 +1,3 @@
+<div>
+    Inner Widget
+</div>

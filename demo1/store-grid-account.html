@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Demo: Title box</title>
+        <link rel="stylesheet" href="../css/demo.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dijit/themes/claro/claro.css" media="screen">
+        <style>
+            #dialog { min-width: 200px; }
+        </style>
+        <script type="text/javascript">
+        dojoConfig = {
+                baseUrl: "../js/",
+                packages: [                
+                    { name: "dojo", location: "core/dojo" },
+                    { name: "dijit", location: "core/dijit" },
+                    { name: "dojox", location: "core/dojox" },
+                    { name: "dstore", location: "core/dstore/" },
+                    { name: "dgrid", location: "core/dgrid/" },
+                    { name: "app", location: "lib/app" }
+                ]               
+            };        
+        </script>
+        <script src="../js/core/dojo/dojo.js.uncompressed.js" data-dojo-config="isDebug: true, async: 1, parseOnLoad: 1"></script>
+        
+        <script>
+// Require the registry, parser, Dialog, and wait for domReady
+require(["dojo/dom","app/grid/GridAccount","dojo/on","dojo/domReady!"]
+, function(dom,GridAccount,on) {
+	 var one = dom.byId("dialog");
+	 on(one, "keydown", function(event) {
+	     console.log(event);
+	 });
+     var accountSet=new GridAccount();
+     accountSet.placeAt(one,'first');
+     accountSet.startup();
+});
+</script>
+
+        
+    </head>
+<body class="claro">
+<!-- and later in the page -->
+<div id="dialog"></div>
+</body>
+</html>

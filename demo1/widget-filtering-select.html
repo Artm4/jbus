@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Demo: Title box</title>
+        <link rel="stylesheet" href="../css/demo.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dijit/themes/claro/claro.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/dgrid.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/skins/claro.css" media="screen">
+        <style>
+            #dialog { min-width: 200px; }
+        </style>
+        <script type="text/javascript">
+        dojoConfig = {
+                baseUrl: "../js/",
+                packages: [                
+                    { name: "dojo", location: "core/dojo" },
+                    { name: "dijit", location: "core/dijit" },
+                    { name: "dojox", location: "core/dojox" },
+                    { name: "dstore", location: "core/dstore/" },
+                    { name: "dgrid", location: "core/dgrid/" },
+                    { name: "app", location: "lib/app" }
+                ]               
+            };        
+        </script>
+        <script src="../js/core/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+        
+        <script>
+
+        require([
+                 "dojo/dom", "dojo/store/Memory", "dijit/form/FilteringSelect",
+                 "dojo/domReady!"
+             ], function(dom, Memory, FilteringSelect){
+                 var dojoStore = new Memory({data: [
+                     {id: 1, name:"we", label:"<i>we</i> <img src='http://placekitten.com/50/70' />"},
+                     {id: 2, name:"are", label:"<u>are</u> <img src='http://placekitten.com/50/60' />"},
+                     {id: 3, name:"kittens", label:"<b>kittens</b> <img src='http://placekitten.com/50/50' />"}
+                 ]});
+
+                var fs = new FilteringSelect({                      
+                      value: 3,
+                      store: dojoStore,
+                      searchAttr: "name",
+                      name: "xyz",
+                      onChange: function(state){console.log(state)},
+                      labelAttr: "label",
+                      labelType: "html",
+                      autoComplete: false,
+                }, dom.byId("dojoBox"));
+                fs.startup();
+                
+             });
+</script>
+
+        
+    </head>
+<body class="claro">
+<!-- and later in the page -->
+<div id=dojoBox></div>
+</body>
+</html>

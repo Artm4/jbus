@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Demo: Title box</title>
+        <link rel="stylesheet" href="../css/demo.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dijit/themes/claro/claro.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/dgrid.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/skins/claro.css" media="screen">
+        <style>
+            #dialog { min-width: 200px; }
+            .gridContainer{height:200px;width:200px}
+        </style>
+        <script type="text/javascript">
+        dojoConfig = {
+                baseUrl: "../js/",
+                packages: [                
+                    { name: "dojo", location: "core/dojo" },
+                    { name: "dijit", location: "core/dijit" },
+                    { name: "dojox", location: "core/dojox" },
+                    { name: "dstore", location: "core/dstore/" },
+                    { name: "dgrid", location: "core/dgrid/" },
+                    { name: "app", location: "lib/app" },
+                    { name: "ext", location: "lib/ext" }
+                ]               
+            };        
+        </script>
+        <script src="../js/core/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+        
+        <script>
+
+        require([
+                 'dojo/_base/declare',
+                 "dijit/TooltipDialog",
+                 "dijit/form/TextBox",
+                 "dijit/form/Button",
+                 "dijit/form/DropDownButton",
+                 "dojo/dom",
+                 'dstore/Rest',
+                 'dstore/Memory',
+                 'dgrid/Grid',
+                 'dgrid/extensions/Pagination',
+                 'dgrid/extensions/DijitRegistry',
+                 "dstore/Trackable",
+                 'dgrid/OnDemandList',
+                 "dojo/domReady!"
+             ], function(declare,TooltipDialog, TextBox, Button, DropDownButton, dom,
+                     Rest,Memory, Grid, Pagination,DijitRegistry,Trackable,OnDemandList){
+                 var myDialog = new TooltipDialog({
+                     
+                 });
+
+                 var myButton = new DropDownButton({
+                     label: "show tooltip dialog",
+                     dropDown: myDialog
+                 });
+                 dom.byId("dropDownButtonContainer").appendChild(myButton.domNode);
+                 myButton.startup();
+                 
+                 setTimeout(function(){
+                     myButton.openDropDown();
+                 }, 1000);
+                 
+                 var data=[
+                     {date:'01/02/2015 13:20',msg:'Some message'},
+                     {date:'01/02/2016 13:26',msg:'See the other'},
+                     {date:'01/02/2016 14:26',msg:'Some error'},
+                     {date:'01/02/2015 13:20',msg:'Some message'},
+                     {date:'01/02/2016 13:26',msg:'See the other'},
+                     {date:'01/02/2016 14:26',msg:'Some error'},
+                     {date:'01/02/2015 13:20',msg:'Some message'},
+                     {date:'01/02/2016 13:26',msg:'See the other'},
+                     {date:'01/02/2016 14:26',msg:'Some error'},
+                     {date:'01/02/2015 13:20',msg:'Some message'},
+                     {date:'01/02/2016 13:26',msg:'See the other'},
+                     {date:'01/02/2016 14:26',msg:'Some error'},
+                     {date:'01/02/2015 13:20',msg:'Some message'},
+                     {date:'01/02/2016 13:26',msg:'See the other'},
+                     {date:'01/02/2016 14:26',msg:'Some error'},
+                     {date:'01/02/2015 13:20',msg:'Some message'},
+                     {date:'01/02/2016 13:26',msg:'See the other'},
+                     {date:'01/02/2016 14:26',msg:'Some error last'}
+                 ];
+                 
+                 var store=new (declare([ Memory, Trackable]))({data: []});
+                 
+                 var id=1;
+                 lastId=0;
+                 firstId=id;
+                 for(key in data )
+                 {
+                     data[key]['id']=id;
+                     console.log(data[key]);
+                     store.add(data[key],{'beforeId':lastId});
+                     lastId=id;
+                     id++;
+                 }
+                 var storeF=store.sort('id','descending');
+                 var grid = new (declare([ Grid,DijitRegistry,OnDemandList]))({
+                     collection: storeF,
+                     className: 'gridContainer',
+                     columns: {
+                         date: 'Date',
+                         msg: 'Message', 
+                         id:'Id'
+                     },
+                     rowsPerPage: 5
+                 });
+                 
+                 myDialog.addChild(grid);
+                 
+                 setTimeout(function(){
+                     store.add({id:lastId+1,date:'01/02/2016 14:26',msg:'Some error added'});
+                     store.fetchRange({start: 0, end: 10})
+                     lastId++;
+                     store.remove(firstId);
+                     firstId++;                     
+                 }, 2000);
+                 
+                 setTimeout(function(){
+                     store.add({id:lastId+1,date:'01/02/2016 14:26',msg:'Some error added'});                     
+                     lastId++;
+                     store.remove(firstId);
+                     firstId++;
+                     console.log('total');
+                     var promise=store.fetch();
+                     promise.then(function(result)
+                             {
+                                  console.log(result.totalLength);
+                             })
+                     
+                     console.log(result);
+                     
+                 }, 5000);
+             });
+        
+</script>
+
+        
+    </head>
+<body class="claro">
+<!-- and later in the page -->
+<div id="dropDownButtonContainer"></div>
+<div id="gridContainer"></div>
+</body>
+</html>

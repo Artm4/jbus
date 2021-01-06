@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Demo: Title box</title>
+        <link rel="stylesheet" href="../css/demo.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dijit/themes/claro/claro.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/dgrid.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/skins/claro.css" media="screen">
+        <style>
+            #dialog { min-width: 200px; }
+        </style>
+        <script type="text/javascript">
+        dojoConfig = {
+                baseUrl: "../js/",
+                packages: [                
+                    { name: "dojo", location: "core/dojo" },
+                    { name: "dijit", location: "core/dijit" },
+                    { name: "dojox", location: "core/dojox" },
+                    { name: "dstore", location: "core/dstore/" },
+                    { name: "dgrid", location: "core/dgrid/" },
+                    { name: "app", location: "lib/app" },
+                    { name: "ext", location: "lib/ext" }
+                ]               
+            };        
+        </script>
+        <script src="../js/core/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+        
+        <script>
+
+        require([
+                 'dojo/dom',
+                 'dojo/_base/declare',                
+                'dstore/Memory',
+                'dstore/Trackable',
+                'dstore/Tree',
+                'dgrid/OnDemandGrid',
+                'dgrid/Tree',
+                'dgrid/extensions/Pagination',
+                'dgrid/extensions/DijitRegistry',
+             ], function (dom,declare, Memory, Trackable, TreeStoreMixin, OnDemandGrid, Tree, Pagination, DijitRegistry) {
+                 
+                 var data=[
+                    {id: 1,name: 'Name1',desc: 'Some Desc1',date: '20/01/2012',parent: null},
+                    {id: 2,name: 'Name2',desc: 'Some Desc2',date: '20/01/2012',parent:1,hasChildren:false},
+                    {id: 3,name: 'Name3',desc: 'Some Desc3',date: '20/01/2012',parent:1},
+                    {id: 4,name: 'Name4',desc: 'Some Desc4',date: '20/01/2012',parent:3,hasChildren:false},
+                    {id: 5,name: 'Name5',desc: 'Some Desc5',date: '20/01/2012',parent:3,hasChildren:false},
+                    {id: 6,name: 'Name6',desc: 'Some Desc6',date: '20/01/2012',parent: null},
+                    {id: 7,name: 'Name7',desc: 'Some Desc7',date: '20/01/2012',parent:6,hasChildren:false},
+                 ];
+                 var store=new (declare([Memory,Trackable, TreeStoreMixin]))({data:data});
+                                 
+                 var grid = new (declare([OnDemandGrid,Tree]))({
+                     collection: store.getRootCollection(),
+                     className: 'dgrid-autoheight',
+                     columns: {
+                    	 id: {label:'Id',renderExpando: true},
+                         name: 'First Name',
+                         desc: 'Desc',
+                         date: 'Date',
+                     },
+                     rowsPerPage: 5
+                 },'grid');
+                 //var one = dom.byId('grid');
+                 //grid.placeAt(one,'first');                 
+                 grid.startup();
+             });
+</script>
+
+        
+    </head>
+<body class="claro">
+<!-- and later in the page -->
+<div id="grid"></div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Demo: Title box</title>
+        <link rel="stylesheet" href="../css/demo.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dijit/themes/claro/claro.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/dgrid.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/skins/claro.css" media="screen">
+        <style>
+            #dialog { min-width: 200px; }
+        </style>
+        <script type="text/javascript">
+        dojoConfig = {
+                baseUrl: "../js/",
+                packages: [                
+                    { name: "dojo", location: "core/dojo" },
+                    { name: "dijit", location: "core/dijit" },
+                    { name: "dojox", location: "core/dojox" },
+                    { name: "dstore", location: "core/dstore/" },
+                    { name: "dgrid", location: "core/dgrid/" },
+                    { name: "app", location: "lib/app" }
+                ]               
+            };        
+        </script>
+        <script src="../js/core/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+        
+        <script>
+
+        require([
+                 'dojo/dom',
+                 'dojo/_base/declare',
+                 'app/collection/Account',
+                 'dstore/RequestMemory',
+                 'dstore/Rest',
+                 'dgrid/Grid',
+                 'dgrid/extensions/Pagination',
+                 'dgrid/extensions/DijitRegistry',
+                 "dstore/Trackable",
+                 "dstore/Cache",
+                 "dstore/Memory",
+                 "dojo/request/notify",
+             ], function (dom,declare, Account,RequestMemory, Rest, Grid, Pagination,DijitRegistry,Trackable,Cache,Memory,notify) {
+                 // Create a Grid instance using Pagination, referencing the store
+                 // Paginate it on server side, range headers mandator
+                 
+                 var store=new (declare([ Rest, Trackable]))({ target: 'rest/account-set-error.php' });
+                
+                 var grid = new (declare([ Grid, Pagination,DijitRegistry]))({
+                     collection: store,
+                     className: 'dgrid-autoheight',
+                     columns: {
+                    	 id: 'Id',
+                         name: 'First Name',
+                         desc: 'Desc',
+                         date: 'Date',
+                     },
+                     rowsPerPage: 5
+                 });
+                 var one = dom.byId('grid');
+                 grid.placeAt(one,'first');                 
+                 grid.startup();
+                 
+                 setTimeout(function(){
+                     //it will add item, reload, total +1, item will be inserted beforeId 5 (index 5)
+                     store.add({name:"Vasko4",desc:"Vasko4",date:''},{'beforeId':5});
+                 }, 1000);
+                 
+                
+                 
+             });
+        
+        require(["dojo/dom","dojo/request/notify","dojo/domReady!"]
+        , function(dom,notify) {
+        	   
+        	   notify("start", function(){
+        	        
+        	         console.log("start");
+        	       });
+        	   notify("done", function(response){
+        	        
+        	         console.log(response);
+        	       });
+        	   notify("error", function(response){
+        	        
+        	         console.log(response);
+        	       });
+            
+        });  
+</script>
+
+        
+    </head>
+<body class="claro">
+<!-- and later in the page -->
+<div id="grid"></div>
+</body>
+</html>

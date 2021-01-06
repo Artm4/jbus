@@ -1,0 +1,253 @@
+---------------------------------------------------------
+POSTDATA: 1 FILES
+Array: Array
+(
+    [uploadedfiles] => Array
+        (
+            [name] => Array
+                (
+                    [0] => downloaded_optimus.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => /tmp/phpwsGp6b
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 21614
+                )
+
+        )
+
+)
+
+    uploadType = html5
+
+   file: uploadedfiles=Array
+---------------------------------------------------------
+POSTDATA: 0 FILES
+Array: Array
+(
+)
+
+
+---------------------------------------------------------
+POSTDATA: 1 FILES
+Array: Array
+(
+    [uploadedfiles] => Array
+        (
+            [name] => Array
+                (
+                    [0] => downloaded_optimus.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => /tmp/phpTI0OUr
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 21614
+                )
+
+        )
+
+)
+
+    uploadType = html5
+
+   file: uploadedfiles=Array
+---------------------------------------------------------
+---------------------------------------------------------
+---------------------------------------------------------
+---------------------------------------------------------
+---------------------------------------------------------
+---------------------------------------------------------
+---------------------------------------------------------
+---------------------------------------------------------
+---------------------------------------------------------
+---------------------------------------------------------
+---------------------------------------------------------
+POSTDATA: 1 FILES
+Array: Array
+(
+    [uploadedfiles] => Array
+        (
+            [name] => Array
+                (
+                    [0] => downloaded_optimus.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => /tmp/php3Z59ZX
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 21614
+                )
+
+        )
+
+)
+
+    uploadType = html5
+
+   file: uploadedfiles=Array
+---------------------------------------------------------
+POSTDATA: 1 FILES
+Array: Array
+(
+    [uploadedfiles] => Array
+        (
+            [name] => Array
+                (
+                    [0] => downloaded_optimus.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => /tmp/php3Z59ZX
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 21614
+                )
+
+        )
+
+)
+
+
+   file: uploadedfiles=Array
+HTML5 multi file input
+POST DATA:::
+
+moved:  downloaded_optimus.jpg
+[{"ERROR":"File could not be moved: downloaded_optimus.jpg"}]
+---------------------------------------------------------
+POSTDATA: 1 FILES
+Array: Array
+(
+    [uploadedfiles] => Array
+        (
+            [name] => Array
+                (
+                    [0] => downloaded_optimus.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => /tmp/phpkgEycU
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 21614
+                )
+
+        )
+
+)
+
+    uploadType = html5
+
+   file: uploadedfiles=Array
+---------------------------------------------------------
+POSTDATA: 1 FILES
+Array: Array
+(
+    [uploadedfiles] => Array
+        (
+            [name] => Array
+                (
+                    [0] => downloaded_optimus.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => /tmp/phpkgEycU
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 21614
+                )
+
+        )
+
+)
+
+
+   file: uploadedfiles=Array
+HTML5 multi file input
+POST DATA:::
+
+moved:  downloaded_optimus.jpg
+[{"ERROR":"File could not be moved: downloaded_optimus.jpg"}]

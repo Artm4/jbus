@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Demo: Title box</title>
+        <link rel="stylesheet" href="../css/demo.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dijit/themes/claro/claro.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/dgrid.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/skins/claro.css" media="screen">
+        <style>
+            #dialog { min-width: 200px; }
+        </style>
+        <script type="text/javascript">
+        dojoConfig = {
+                baseUrl: "../js/",
+                packages: [                
+                    { name: "dojo", location: "core/dojo" },
+                    { name: "dijit", location: "core/dijit" },
+                    { name: "dojox", location: "core/dojox" },
+                    { name: "dstore", location: "core/dstore/" },
+                    { name: "dgrid", location: "core/dgrid/" },
+                    { name: "app", location: "lib/app" },
+                    { name: "ext", location: "lib/ext" }
+                ]               
+            };        
+        </script>
+        <script src="../js/core/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+        
+        <script>
+
+        require([
+                 "dijit/TooltipDialog",
+                 "dijit/form/TextBox",
+                 "dijit/form/Button",
+                 "dijit/form/DropDownButton",
+                 "dojo/dom",
+                 "dojo/domReady!"
+             ], function(TooltipDialog, TextBox, Button, DropDownButton, dom){
+                 var myDialog = new TooltipDialog({
+                     content:
+                         '<label for="name">Name:</label> <input data-dojo-type="dijit/form/TextBox" id="name" name="name"><br>' +
+                         '<label for="hobby">Hobby:</label> <input data-dojo-type="dijit/form/TextBox" id="hobby" name="hobby"><br>' +
+                         '<button data-dojo-type="dijit/form/Button" type="submit">Save</button>'
+                 });
+
+                 var myButton = new DropDownButton({
+                     label: "show tooltip dialog",
+                     dropDown: myDialog
+                 });
+                 dom.byId("dropDownButtonContainer").appendChild(myButton.domNode);
+                 myButton.startup();
+                 
+                 setTimeout(function(){
+                     myButton.openDropDown();
+                 }, 1000);
+             });
+        
+</script>
+
+        
+    </head>
+<body class="claro">
+<!-- and later in the page -->
+<div id="dropDownButtonContainer"></div>
+</body>
+</html>

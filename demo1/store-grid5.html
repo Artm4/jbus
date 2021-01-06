@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Demo: Title box</title>
+        <link rel="stylesheet" href="../css/demo.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dijit/themes/claro/claro.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/dgrid.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/skins/claro.css" media="screen">
+        <style>
+            #dialog { min-width: 200px; }
+        </style>
+        <script type="text/javascript">
+        dojoConfig = {
+                baseUrl: "../js/",
+                packages: [                
+                    { name: "dojo", location: "core/dojo" },
+                    { name: "dijit", location: "core/dijit" },
+                    { name: "dojox", location: "core/dojox" },
+                    { name: "dstore", location: "core/dstore/" },
+                    { name: "dgrid", location: "core/dgrid/" },
+                    { name: "app", location: "lib/app" }
+                ]               
+            };        
+        </script>
+        <script src="../js/core/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+        
+        <script>
+
+        require([
+                 'dojo/dom',
+                 'dojo/_base/declare',
+                 'app/collection/Account',
+                 'dstore/RequestMemory',
+                 'dstore/Rest',
+                 'dgrid/Grid',
+                 'dgrid/extensions/Pagination',
+                 'dgrid/extensions/DijitRegistry',
+                 "dstore/Trackable",
+                 "dstore/Cache",
+                 "dstore/Memory",
+                 "dijit/form/Button",
+                 "dojo/dom-construct"
+             ], function (dom,declare, Account,RequestMemory, Rest, Grid, Pagination,DijitRegistry,Trackable,Cache,Memory,Button,domConstruct) {
+                 // Create a Grid instance using Pagination, referencing the store
+                 // Paginate it on server side, range headers mandator
+                 
+                 var store=new (declare([ Rest, Trackable]))({ idProperty:'id',target: 'rest/account-set-rem.php' });
+                
+                 var grid = new (declare([ Grid, Pagination,DijitRegistry]))({
+                     collection: store,
+                     className: 'dgrid-autoheight',
+                     columns: {
+                    	 id: 'Id',
+                         name: 'First Name',
+                         desc: 'Desc',
+                         date: 'Date',
+                     },
+                     //rowsPerPage: 5
+                 });
+                 grid.set('rowsPerPage',5);
+                 var one = dom.byId('grid');
+                 grid.placeAt(one,'first');    
+                 
+                 grid.columns['action']={ label: 'Action' ,renderCell: function(object, value, node){
+                             var buttonDelete=new Button(
+                             {
+                                 label: "Delete",                                 
+                             });
+                             buttonDelete.on('click',function(){console.log(object)});
+                             var node=domConstruct.create("div")
+                             
+                             var buttonEdit=new Button(
+                             {
+                                 label: "Edit",                                 
+                             });
+                             buttonEdit.on('click',function(){console.log(object)});
+                             
+                             buttonEdit.placeAt(node,'last');
+                             buttonDelete.placeAt(node,'last');
+                             
+                             return node;
+                         }}
+                 grid.set('columns',grid.columns);
+                 
+                 grid.startup();        
+                 
+                 /* condition to refresh page, send get if rest
+                 var needsRefresh = (event.type === 'add' && event.index < pageEnd) ||
+                (event.type === 'delete' && event.previousIndex < pageEnd) ||
+                (event.type === 'update' &&
+                    Math.floor(event.index / rowsPerPage) !== Math.floor(event.previousIndex / rowsPerPage));
+                 
+                 
+                 setTimeout(function(){
+                     //it will add item, reload, total +1, item will be inserted beforeId 5 (index 5)
+                     store.add({name:"Vasko4",desc:"Vasko4",date:''},{'beforeId':5});
+                 }, 1000);   
+                 */
+                 
+                  /*  
+                 setTimeout(function(){
+                     // it will reload grid, in visible range
+                     store.remove(4);
+                 }, 2000);
+                 */
+                 /*  
+                 setTimeout(function(){
+                	 //it will not reload grid , out of visible range (bug change total +1, should be -1)
+                     store.remove(11);
+                 }, 2000);
+                 
+                 setTimeout(function(){
+                     //it will add item, no reload, total +1
+                     store.add({name:"Vasko",desc:"Vasko1",date:''});
+                 }, 1000);       
+                 
+                 setTimeout(function(){
+                	 // this will update item,no reload
+                     store.put({id:1,name:"Vasko2",desc:"Vasko2",date:''});
+                     
+                 }, 1500);
+                 
+                 setTimeout(function(){
+                	 // update store and grid, no rest request
+                     store.emit('update', { target: {id:1,name:"Vasko2",desc:"Vasko2",date:''} })
+                 }, 5000);
+                 
+                 setTimeout(function(){
+                        store.get(2).then(
+                        function(obj)
+                        {                        	
+                        	store.emit('update', { target: {id:1,name:'new name'} });
+                        }
+                     );
+                 }, 3000);
+                 
+                 setTimeout(function(){
+                     store.emit('update', { target: {desc:1,name:'Asen1'} });               
+              }, 3000);
+                 */
+                 setTimeout(function(){
+                     store.remove(4);       
+              }, 3000);
+                 
+             });
+</script>
+
+        
+    </head>
+<body class="claro">
+<!-- and later in the page -->
+<div id="grid"></div>
+</body>
+</html>

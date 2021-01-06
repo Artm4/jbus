@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Demo: Title box</title>
+        <link rel="stylesheet" href="../css/demo.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dijit/themes/claro/claro.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/dgrid.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/skins/claro.css" media="screen">
+        <style>
+            #dialog { min-width: 200px; }
+        </style>
+        <script type="text/javascript">
+        dojoConfig = {
+                baseUrl: "../js/",
+                packages: [                
+                    { name: "dojo", location: "core/dojo" },
+                    { name: "dijit", location: "core/dijit" },
+                    { name: "dojox", location: "core/dojox" },
+                    { name: "dstore", location: "core/dstore/" },
+                    { name: "dgrid", location: "core/dgrid/" },
+                    { name: "app", location: "lib/app" }
+                ]               
+            };        
+        </script>
+        <script src="../js/core/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+        
+        <script>
+
+        require([
+                 "dojo/dom", "dojo/store/Memory", "dijit/form/FilteringSelect","dojo/aspect",
+                 "dojo/domReady!"
+             ], function(dom, Memory, FilteringSelect,aspect){
+                 var dojoStore = new Memory();
+                 dojoStore.setData([
+                                    {id: 1, name:"we", label:"<i>we</i> <img src='http://placekitten.com/50/70' />"},
+                                    {id: 2, name:"are", label:"<u>are</u> <img src='http://placekitten.com/50/60' />"},
+                                    {id: 3, name:"kittens", label:"<b>kittens</b> <img src='http://placekitten.com/50/50' />"}
+                                ]);
+
+                var fs = new FilteringSelect({
+                    //value: 3,   
+                    store: dojoStore,
+                    searchAttr: "name",
+                    name: "xyz",
+                    onChange: function(state){console.log(state)},
+                    labelAttr: "label",
+                    labelType: "html",
+                    autoComplete: false});                
+                //fs.set(); 
+                fs.on('change',function(value){console.log('changed'+this.get('value'));})
+                 fs.watch("value", function(name, oldValue, value){
+                    console.log('watch2');
+                    console.log(name+ oldValue +value);
+                  });
+                fs.placeAt('dojoBox')
+                fs.startup();
+                /*
+                setTimeout(function(){
+                    dojoStore.setData([
+                                       {id: 1, name:"we", label:"1"},
+                                       {id: 2, name:"are", label:"2"},
+                                       {id: 3, name:"kittens", label:"3"}
+                                   ]);
+                }, 4000)
+                fs.on('search',function(){console.log('searching'+this.get('focusNode').value);return true});
+                */
+                //aspect.after(fs, "onSearch", function(){console.log(123);});
+                setTimeout(function(){fs.set('value',2)},2000);
+                //setTimeout(function(){fs.set('item',{id: 4, name:"we4", label:"4"})},2000);
+             });
+</script>
+
+        
+    </head>
+<body class="claro">
+<!-- and later in the page -->
+<div id=dojoBox></div>
+</body>
+</html>

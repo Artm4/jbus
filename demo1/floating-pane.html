@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+    <head>
+
+        <link rel="stylesheet" href="dijit/themes/claro/claro.css">
+        <style type="text/css">
+            @import "dojox/layout/resources/FloatingPane.css";
+            @import "dojox/layout/resources/ResizeHandle.css";
+        </style>
+        <script>dojoConfig = {parseOnLoad: true}</script>
+        <script src='dojo/dojo.js'></script>
+
+        <script>
+            dojo.require("dojox.layout.FloatingPane");
+            dojo.require("dijit.form.Button");
+        </script>
+    </head>
+    <body class="claro">
+        <div data-dojo-type="dojox.layout.FloatingPane" id="dFloatingPane"
+             title="A floating pane" data-dojo-props="resizable:true, dockable:true, title:'A floating pane'"
+             style="position:absolute;top:0;left:0;width:100px;height:100px;visibility:hidden;">
+            This is the content of the pane!
+        </div>
+
+<!--        <div data-dojo-type="dijit.form.Button" data-dojo-props="label:'Show me', onClick:function(){dijit.byId('dFloatingPane').show();}"></div>
+         makes example preview div big enough: <div style="height:280px;width:100%;"></div>-->
+        <div dojotype="dojox.layout.FloatingPane" title="Child layout test" 
+			style="width:400px; height:300px;" resizable="true">
+<!--			<div dojotype="dijit.layout.TabContainer">
+				<div dojotype="dijit.layout.ContentPane" title="Tab 1">
+					First Page
+				</div>
+				<div dojotype="dijit.layout.ContentPane" title="Tab 2">
+					<div dojotype="dijit.layout.TabContainer">
+						<div dojotype="dijit.layout.ContentPane" title="Sub-tab 1">
+							Story of Paul.
+						</div>
+						<div dojotype="dijit.layout.ContentPane" title="Sub-tab 2">
+							Story about Paul.
+						</div>
+						<div dojotype="dijit.layout.ContentPane" title="Sub-tab 3">
+							Story about... guess who.
+						</div>
+					</div>
+				</div>
+			</div>-->
+		</div>	
+    </body>
+</html>

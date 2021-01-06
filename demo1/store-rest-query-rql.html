@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Demo: Title box</title>
+        <link rel="stylesheet" href="../css/demo.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dijit/themes/claro/claro.css" media="screen">
+        <style>
+            #dialog { min-width: 200px; }
+        </style>
+        <script type="text/javascript">
+        dojoConfig = {
+                baseUrl: "../js/",
+                packages: [                
+                    { name: "dojo", location: "core/dojo" },
+                    { name: "dijit", location: "core/dijit" },
+                    { name: "dojox", location: "core/dojox" },
+                    { name: "dstore", location: "core/dstore/" },
+                    { name: "app", location: "lib/app" },
+                    { name: "rql", location: "core/rql" }
+                ]               
+            };        
+        </script>
+        <script src="../js/core/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+        
+        <script>
+// Require the registry, parser, Dialog, and wait for domReady
+require(['dojo/_base/declare',"app/collection/Store",
+         'dstore/extensions/RqlQuery',
+         'rql/query',
+         "dojo/domReady!"         
+         ]
+, function(declare,Store,RqlQuery,query) {    
+    var RqlStore = declare([ Store, RqlQuery ]);   
+    var rqlStore = new RqlStore();
+    resultSetName=rqlStore.filter('price<10|rating>3');
+
+    resultSetName.forEach(function (object) {
+        console.log(object)
+    });
+    
+    var rqlQuery= new query.Query();
+    rqlQuery.lt('id',3);    
+    resultSetName=rqlStore.filter(rqlQuery.toString());
+    
+    resultSetName.forEach(function (object) {
+        console.log(object)
+    });
+    
+});
+</script>
+
+        
+    </head>
+<body class="claro">
+<!-- and later in the page -->
+<div id="dialog"></div>
+</body>
+</html>

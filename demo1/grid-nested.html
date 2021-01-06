@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Demo: Title box</title>
+        <link rel="stylesheet" href="../css/demo.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dijit/themes/claro/claro.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/dgrid.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/skins/claro.css" media="screen">
+        <style>
+            #dialog { min-width: 200px; }
+        </style>
+        <script type="text/javascript">
+        dojoConfig = {
+                baseUrl: "../js/",
+                packages: [                
+                    { name: "dojo", location: "core/dojo" },
+                    { name: "dijit", location: "core/dijit" },
+                    { name: "dojox", location: "core/dojox" },
+                    { name: "dstore", location: "core/dstore/" },
+                    { name: "dgrid", location: "core/dgrid/" },
+                    { name: "app", location: "lib/app" }
+                ]               
+            };        
+        </script>
+        <script src="../js/core/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+        
+        <script>
+
+        require([
+                 'dojo/dom',
+                 'dojo/_base/declare',
+                 'dstore/Memory',
+                 'dstore/Trackable',
+                 'dstore/Tree',
+                 'dgrid/Grid',
+                 'dgrid/Tree',
+                 'dgrid/extensions/Pagination',
+                 'dgrid/extensions/DnD',
+                 'dgrid/extensions/DijitRegistry',
+                 'dstore/Rest', 
+                 "dojo/domReady!"              
+             ], function (dom,declare, Memory, Trackable, TreeStoreMixin, Grid, Tree, Pagination, DnD,DijitRegistry,Rest) {
+                 var store=new (declare([ Rest, Trackable, TreeStoreMixin]))({
+                	 target: 'rest/account-tree.php' ,
+                	 /*getChildren: function(object){
+                         return this.query({parent: object.id});
+                     }*/
+                	 
+                 });
+                 /*var store = new (declare([Memory, Trackable, TreeStoreMixin]))({
+			        data: createData()
+			    });*/
+                 
+
+                 // Instantiate grid
+                 var grid = new (declare([Grid, Pagination,Tree,DijitRegistry]))({
+                     collection: store.getRootCollection(),
+                     className: 'dgrid-autoheight',
+                     columns: {
+                         First_Name: {
+                             label: 'First Name',
+                             renderExpando: true
+                         },
+                         Last_Name: {
+                             label: 'Last Name'
+                         }
+                     }
+                 });
+
+                 var one = dom.byId('grid');
+                 grid.placeAt(one,'first');                 
+                 grid.startup();
+
+                 function createData() {
+                     var data = [];
+                     var column;
+                     var i;
+                     var item;
+
+                     for (i = 0; i < 50; i++) {
+                         item = {};
+                         for (column in { First_Name: 1, Last_Name: 1 }) {
+                             item.id = i;
+                             item[column] = column + '_' + (i + 1);
+                         }
+                         if (i > 1) {
+                             item.hasChildren = false;
+                             item.parent = i % 2;
+                         }
+                         data.push(item);
+                     }
+
+                     return data;
+                 }
+             });
+
+</script>
+
+        
+    </head>
+<body class="claro">
+<!-- and later in the page -->
+<div id="grid"></div>
+</body>
+</html>

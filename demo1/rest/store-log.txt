@@ -1,0 +1,1015 @@
+
+----------------
+date:2016-03-11 18:31:24
+params:Array
+(
+    [price<10|rating>3] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?price%3C10|rating%3E3
+method:GET
+body:
+
+----------------
+date:2016-03-11 18:31:24
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php?
+method:GET
+body:
+
+----------------
+date:2016-03-11 19:27:47
+params:Array
+(
+    [id] => lt=3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3
+method:GET
+body:
+
+----------------
+date:2016-03-11 19:27:47
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/4
+method:PUT
+body:{"id":4,"name":"Vasko"}
+
+----------------
+date:2016-03-11 19:27:47
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/1
+method:DELETE
+body:
+
+----------------
+date:2016-03-11 19:27:47
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/5
+method:PUT
+body:{"id":5,"name":"Vasko"}
+
+----------------
+date:2016-03-11 19:27:50
+params:Array
+(
+    [id] => lt=3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3
+method:GET
+body:
+
+----------------
+date:2016-03-11 19:27:54
+params:Array
+(
+    [id] => lt=3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3
+method:GET
+body:
+
+----------------
+date:2016-03-11 19:28:38
+params:Array
+(
+    [id] => 3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=3
+method:GET
+body:
+
+----------------
+date:2016-03-11 19:28:39
+params:Array
+(
+    [id] => 3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=3
+method:GET
+body:
+
+----------------
+date:2016-03-11 19:28:39
+params:Array
+(
+    [id] => 3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=3
+method:GET
+body:
+
+----------------
+date:2016-03-11 19:28:43
+params:Array
+(
+    [id] => 3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=3
+method:GET
+body:
+
+----------------
+date:2016-03-11 19:28:45
+params:Array
+(
+    [id] => 3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=3
+method:GET
+body:
+
+----------------
+date:2016-03-11 19:29:57
+params:Array
+(
+    [id] => 3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=3
+method:GET
+body:
+
+----------------
+date:2016-03-11 19:30:13
+params:Array
+(
+    [id] => lt=3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3
+method:GET
+body:
+
+----------------
+date:2016-03-11 19:30:14
+params:Array
+(
+    [id] => lt=3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3
+method:GET
+body:
+
+----------------
+date:2016-03-11 19:30:18
+params:Array
+(
+    [id] => lt=3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3
+method:GET
+body:
+
+----------------
+date:2016-03-11 19:30:34
+params:Array
+(
+    [id] => lt=3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3
+method:GET
+body:
+
+----------------
+date:2016-06-30 11:58:01
+params:Array
+(
+    [price<10|rating>3] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?price%3C10|rating%3E3
+method:GET
+body:
+
+----------------
+date:2016-06-30 11:58:01
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php?
+method:GET
+body:
+
+----------------
+date:2016-06-30 12:35:52
+params:Array
+(
+    [id] => lt=3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3
+method:GET
+body:
+
+----------------
+date:2016-06-30 12:35:55
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/4
+method:PUT
+body:{"id":4,"name":"Vasko"}
+
+----------------
+date:2016-06-30 12:35:55
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/1
+method:DELETE
+body:
+
+----------------
+date:2016-06-30 12:35:55
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/5
+method:PUT
+body:{"id":5,"name":"Vasko"}
+
+----------------
+date:2016-06-30 12:36:45
+params:Array
+(
+    [price<10|rating>3] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?price%3C10|rating%3E3
+method:GET
+body:
+
+----------------
+date:2016-06-30 12:36:45
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php?
+method:GET
+body:
+
+----------------
+date:2016-08-19 16:36:49
+params:Array
+(
+    [id] => lt=3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3
+method:GET
+body:
+
+----------------
+date:2016-08-19 16:36:49
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/1
+method:DELETE
+body:
+
+----------------
+date:2016-08-19 16:36:49
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/5
+method:PUT
+body:{"id":5,"name":"Vasko"}
+
+----------------
+date:2016-08-19 16:36:49
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/4
+method:PUT
+body:{"id":4,"name":"Vasko"}
+
+----------------
+date:2016-08-22 12:14:17
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/1
+method:DELETE
+body:
+
+----------------
+date:2016-08-22 12:14:18
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/5
+method:PUT
+body:{"id":5,"name":"Vasko"}
+
+----------------
+date:2016-08-22 12:14:18
+params:Array
+(
+    [id] => lt=3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3
+method:GET
+body:
+
+----------------
+date:2016-08-22 12:14:18
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/4
+method:PUT
+body:{"id":4,"name":"Vasko"}
+
+----------------
+date:2016-08-22 12:14:24
+params:Array
+(
+    [id] => lt=3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3
+method:GET
+body:
+
+----------------
+date:2016-08-22 12:14:24
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/4
+method:PUT
+body:{"id":4,"name":"Vasko"}
+
+----------------
+date:2016-08-22 12:14:24
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/1
+method:DELETE
+body:
+
+----------------
+date:2016-08-22 12:14:24
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/5
+method:PUT
+body:{"id":5,"name":"Vasko"}
+
+----------------
+date:2016-08-22 12:21:44
+params:Array
+(
+    [id] => lt=3
+    [sort(_lastName)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+lastName)
+method:GET
+body:
+
+----------------
+date:2016-08-22 12:21:44
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/4
+method:PUT
+body:{"id":4,"name":"Vasko"}
+
+----------------
+date:2016-08-22 12:21:44
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/1
+method:DELETE
+body:
+
+----------------
+date:2016-08-22 12:21:44
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/5
+method:PUT
+body:{"id":5,"name":"Vasko"}
+
+----------------
+date:2016-08-22 12:23:26
+params:Array
+(
+    [id] => lt=3
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3
+method:GET
+body:
+
+----------------
+date:2016-08-22 12:24:44
+params:Array
+(
+    [id] => lt=3
+    [sort(-sortName)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(-sortName)
+method:GET
+body:
+
+----------------
+date:2016-08-22 12:25:03
+params:Array
+(
+    [id] => lt=3
+    [sort(-sortName)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(-sortName)
+method:GET
+body:
+
+----------------
+date:2016-08-22 13:13:27
+params:Array
+(
+    [id] => lt=3
+    [sort(-sortName)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(-sortName)
+method:GET
+body:
+
+----------------
+date:2016-08-22 13:13:43
+params:Array
+(
+    [id] => lt=3
+    [sort(-sortName)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(-sortName)
+method:GET
+body:
+
+----------------
+date:2016-08-22 13:45:37
+params:Array
+(
+    [id] => lt=3
+    [sort(-sortName)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(-sortName)
+method:GET
+body:
+
+----------------
+date:2016-08-22 13:46:06
+params:Array
+(
+    [id] => lt=3
+    [sort(-sortName)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(-sortName)
+method:GET
+body:
+
+----------------
+date:2016-08-22 13:46:08
+params:Array
+(
+    [id] => lt=3
+    [sort(_lastName)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+lastName)
+method:GET
+body:
+
+----------------
+date:2016-08-22 13:46:08
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/4
+method:PUT
+body:{"id":4,"name":"Vasko"}
+
+----------------
+date:2016-08-22 13:46:08
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/1
+method:DELETE
+body:
+
+----------------
+date:2016-08-22 13:46:08
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/5
+method:PUT
+body:{"id":5,"name":"Vasko"}
+
+----------------
+date:2016-08-22 17:09:23
+params:Array
+(
+    [id] => lt=3
+    [sort(-sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(-sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-08-22 17:18:26
+params:Array
+(
+    [id] => lt=3
+    [sort(-sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(-sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-08-22 17:18:30
+params:Array
+(
+    [id] => lt=3
+    [sort(-sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(-sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-08-22 17:18:36
+params:Array
+(
+    [id] => lt=3
+    [sort(-sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(-sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-08-22 17:18:41
+params:Array
+(
+    [id] => lt=3
+    [sort(-sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(-sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-08-22 17:18:44
+params:Array
+(
+    [id] => lt=3
+    [sort(-sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(-sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-08-22 17:18:56
+params:Array
+(
+    [id] => lt=3
+    [sort(-sortName)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(-sortName)
+method:GET
+body:
+
+----------------
+date:2016-08-22 17:19:01
+params:Array
+(
+    [id] => lt=3
+    [sort(-sortName)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(-sortName)
+method:GET
+body:
+
+----------------
+date:2016-08-22 17:19:09
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)
+method:GET
+body:
+
+----------------
+date:2016-08-22 17:19:34
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-08-25 17:22:59
+params:Array
+(
+    [id] => lt=3
+    [sort(_lastName)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+lastName)
+method:GET
+body:
+
+----------------
+date:2016-08-25 17:22:59
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/4
+method:PUT
+body:{"id":4,"name":"Vasko"}
+
+----------------
+date:2016-08-25 17:22:59
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/1
+method:DELETE
+body:
+
+----------------
+date:2016-08-25 17:22:59
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/5
+method:PUT
+body:{"id":5,"name":"Vasko"}
+
+----------------
+date:2016-08-25 17:23:07
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/5
+method:PUT
+body:{"id":5,"name":"Vasko"}
+
+----------------
+date:2016-08-25 17:23:07
+params:Array
+(
+    [id] => lt=3
+    [sort(_lastName)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+lastName)
+method:GET
+body:
+
+----------------
+date:2016-08-25 17:23:07
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/1
+method:DELETE
+body:
+
+----------------
+date:2016-08-25 17:23:07
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/4
+method:PUT
+body:{"id":4,"name":"Vasko"}
+
+----------------
+date:2016-08-26 18:26:52
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-08-26 18:26:57
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-09-26 17:33:45
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-09-26 17:33:49
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-09-26 17:33:53
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-09-26 17:35:42
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-10-13 16:35:54
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-10-13 16:37:04
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-11-20 13:18:16
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-11-20 13:18:18
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-11-20 13:18:25
+params:Array
+(
+    [id] => lt=3
+    [sort(_lastName)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+lastName)
+method:GET
+body:
+
+----------------
+date:2016-11-20 13:18:25
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/4
+method:PUT
+body:{"id":4,"name":"Vasko"}
+
+----------------
+date:2016-11-20 13:18:25
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/1
+method:DELETE
+body:
+
+----------------
+date:2016-11-20 13:18:25
+params:Array
+(
+)
+
+request uri:/test/dojo/demo1/rest/store.php/5
+method:PUT
+body:{"id":5,"name":"Vasko"}
+
+----------------
+date:2016-11-20 13:18:31
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-11-20 18:47:42
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-11-20 18:47:48
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-11-20 18:48:28
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:
+
+----------------
+date:2016-11-20 18:49:13
+params:Array
+(
+    [id] => lt=3
+    [sort(_sortName)] => 
+    [sort(-sortName2)] => 
+)
+
+request uri:/test/dojo/demo1/rest/store.php?id=lt=3&sort(+sortName)&sort(-sortName2)
+method:GET
+body:

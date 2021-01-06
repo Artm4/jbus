@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>    
+        <meta charset="utf-8">
+        <title>Demo: dojoConfig</title>
+        <link rel="stylesheet" href="../css/demo.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dijit/themes/claro/claro.css" media="screen"> 
+        <link rel="stylesheet" href="../js/core/dojox/layout/resources/FloatingPane.css" media="screen"> 
+        <link rel="stylesheet" href="../js/core/dojox/layout/resources/ResizeHandle.css" media="screen">       
+        <style>            #dialog { min-width: 200px; }
+            
+        </style>
+        <script type="text/javascript">
+        dojoConfig = {
+                baseUrl: "../js/",
+                packages: [                
+                    { name: "dojo", location: "core/dojo" },
+                    { name: "dijit", location: "core/dijit" },
+                    { name: "dojox", location: "core/dojox" },                
+                    { name: "app", location: "lib/app" },
+                    { name: "ext", location: "lib/ext" }
+                ]               
+            };
+        </script>
+        <script src="../js/core/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+            
+        
+
+<script>
+
+    // Require the Dialog class
+    require(['dojo/dom',"dijit/registry", "dojo/parser", "ext/jbus/Window", "dojo/domReady!"], function(dom,registry, parser, Window){
+        pFloatingPane = new Window({
+            title: "A floating pane",            
+            style: "position:absolute;top:100px;left:0;width:auto;height:auto;",            
+            id: "pFloatingPane",
+            region: 'region',
+            //style: "margin:0 auto;width:500px;height:500px;",
+         }, "pFloatingPane");
+        //pFloatingPane.close=function(){this.hide()};
+        pFloatingPane.set('resizable',true);
+        pFloatingPane.set('dockable',true);
+        //pFloatingPane.set('closable',false);
+        pFloatingPane.startup();
+        
+        pFloatingPane.show();
+    });
+</script>
+
+        
+    </head>
+<body class="claro">
+
+<!-- 
+<div data-dojo-type="dojox/layout/FloatingPane" id="dFloatingPane"
+             title="A floating pane" data-dojo-props="resizable:true, dockable:true, title:'A floating pane'"
+             style="position:absolute;top:0;left:0;width:100px;height:100px;visibility:hidden;">
+            This is the content of the pane!
+        </div>
+         -->
+
+<div  id="pFloatingPane" >
+            This is the content of the pane!
+        </div>
+<div data-dojo-type="dijit/form/Button" data-dojo-props="label:'Show me', onClick:function(){pFloatingPane.show();}"></div>
+
+<br/><br/><br/><br/>
+
+</body>
+</html>

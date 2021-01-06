@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Demo: Title box</title>
+        <link rel="stylesheet" href="../css/demo.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dijit/themes/claro/claro.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/dgrid.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/skins/claro.css" media="screen">
+        <style>
+            #dialog { min-width: 200px; }
+        </style>
+        <script type="text/javascript">
+        dojoConfig = {
+                baseUrl: "../js/",
+                packages: [                
+                    { name: "dojo", location: "core/dojo" },
+                    { name: "dijit", location: "core/dijit" },
+                    { name: "dojox", location: "core/dojox" },
+                    { name: "dstore", location: "core/dstore/" },
+                    { name: "dgrid", location: "core/dgrid/" },
+                    { name: "app", location: "lib/app" }
+                ]               
+            };        
+        </script>
+        <script src="../js/core/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+        
+        <script>
+
+        require([
+                 "dojo/_base/declare",
+                 "dojo/_base/array",
+                 "dojo/json",
+                 "dojo/store/Memory",
+                 "dojo/store/JsonRest",
+                 "dijit/form/ComboBox",                 
+                 "dojo/domReady!"
+             ], function(
+                 declare,
+                 array,
+                 JSON,
+                 Memory,
+                 JsonRest,
+                 ComboBox,
+                 data
+             ) {
+		        	var restStore = new JsonRest({
+		                target: "rest/filtering-select.php",
+		                idProperty: "id"
+		            });
+		            
+		            var comboBox1 = new ComboBox({
+		                store: restStore,
+		                searchAttr: "name",
+		                autocomplete: true,
+		                placeholder: "Select your favorite song."   
+		            }, "comboBox1Placeholder");
+		            
+		            comboBox1.startup();
+             });
+</script>
+
+        
+    </head>
+<body class="claro">
+<!-- and later in the page -->
+<div id=comboBox1Placeholder></div>
+</body>
+</html>

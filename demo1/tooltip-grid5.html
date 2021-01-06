@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Demo: Title box</title>
+        <link rel="stylesheet" href="../css/demo.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dijit/themes/claro/claro.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/dgrid.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dgrid/css/skins/claro.css" media="screen">
+        <style>
+            #dialog { min-width: 200px; }
+            .gridContainer{height:200px;width:200px}
+        </style>
+        <script type="text/javascript">
+        dojoConfig = {
+                baseUrl: "../js/",
+                packages: [                
+                    { name: "dojo", location: "core/dojo" },
+                    { name: "dijit", location: "core/dijit" },
+                    { name: "dojox", location: "core/dojox" },
+                    { name: "dstore", location: "core/dstore/" },
+                    { name: "dgrid", location: "core/dgrid/" },
+                    { name: "app", location: "lib/app" },
+                    { name: "ext", location: "lib/ext" }
+                ]               
+            };        
+        </script>
+        <script src="../js/core/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+        
+        <script>
+
+        require([
+                 'dojo/_base/declare',
+                
+                 "dojo/dom",
+               
+                 'ext/widget/MessageBoard',
+                 "dojo/domReady!"
+             ], function(declare, dom,
+                     MessageBoard){
+                 
+                 var myButton = new MessageBoard({
+                     label: "Message Board",
+                     size:5
+                 });
+                 dom.byId("dropDownButtonContainer").appendChild(myButton.domNode);
+                 myButton.startup();
+                 
+                 setTimeout(function(){
+                     myButton.openDropDown();
+                 }, 1000);
+                 
+                 var data=[
+                     {date:'01/02/2015 13:20',msg:'Some message'},
+                     {date:'01/02/2016 13:26',msg:'See the other'},
+                     {date:'01/02/2016 14:26',msg:'Some error'},
+                     {date:'01/02/2015 13:20',msg:'Some message'},
+                     {date:'01/02/2016 13:26',msg:'See the other'},
+                     {date:'01/02/2016 14:26',msg:'Some error'},
+                     {date:'01/02/2015 13:20',msg:'Some message'},
+                     {date:'01/02/2016 13:26',msg:'See the other'},
+                     {date:'01/02/2016 14:26',msg:'Some error'},
+                     {date:'01/02/2015 13:20',msg:'Some message'},
+                     {date:'01/02/2016 13:26',msg:'See the other'},
+                     {date:'01/02/2016 14:26',msg:'Some error'},
+                     {date:'01/02/2015 13:20',msg:'Some message'},
+                     {date:'01/02/2016 13:26',msg:'See the other'},
+                     {date:'01/02/2016 14:26',msg:'Some error'},
+                     {date:'01/02/2015 13:20',msg:'Some message'},
+                     {date:'01/02/2016 13:26',msg:'See the other'},
+                     {date:'01/02/2016 14:26',msg:'Some error last'}
+                 ];
+                 
+                 
+                 for(key in data )
+                 {   
+                     myButton.add(data[key]['msg'],data[key]['date']);                     
+                 }
+                
+                 
+                 setTimeout(function(){
+                     myButton.add('Some error added','01/02/2016 14:26');                                          
+                 }, 2000);
+                 
+                 setTimeout(function(){
+                     myButton.add('Some error added','01/02/2016 14:26');                                  
+                 }, 5000);
+             });
+        
+</script>
+
+        
+    </head>
+<body class="claro">
+<!-- and later in the page -->
+<div id="dropDownButtonContainer"></div>
+<div id="gridContainer"></div>
+</body>
+</html>

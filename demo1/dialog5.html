@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>    
+        <meta charset="utf-8">
+        <title>Demo: dojoConfig</title>
+        <link rel="stylesheet" href="../css/demo.css" media="screen">
+        <link rel="stylesheet" href="../js/core/dijit/themes/claro/claro.css" media="screen">
+        <style>
+              body, html, .container { width:100%; height:100%; margin:0; padding:0;}
+            #dialog { min-width: 200px; }
+        </style>
+        <script type="text/javascript">
+        dojoConfig = {
+                baseUrl: "../js/",
+                packages: [                
+                    { name: "dojo", location: "core/dojo" },
+                    { name: "dijit", location: "core/dijit" },
+                    { name: "dojox", location: "core/dojox" },                
+                    { name: "app", location: "lib/app" },
+                    { name: "ext", location: "lib/ext" }
+                ]               
+            };
+        </script>
+        <script src="../js/core/dojo/dojo.js.uncompressed.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 0"></script>
+            
+        
+
+<script>
+    // Require the Dialog class
+    require(["dijit/registry", "dojo/parser", "ext/jbus/Dialog", "dijit/form/Button","dijit/layout/LayoutContainer", "dojo/domReady!"], function(registry, parser,Dialog,Button,LayoutContainer){
+        // Show the dialog
+         var pFloatingPane = new Dialog({
+            title: "A floating pane",
+            //parseOnLoad: false,
+            //style: "width:500px;height:500px;",
+            style: "width:50%;height:70%;",
+         });
+        
+        var layout= new LayoutContainer({},"terms");
+        pFloatingPane.setContent(layout);
+        showDialog = function() {
+            pFloatingPane.show();
+        }
+        // Hide the dialog
+        hideDialog = function() {
+            pFloatingPane.hide();
+        }
+        /*var elSet=dojo.query(".parsable");
+        console.log(elSet);
+        for(i in elSet)
+        {
+            
+        }
+        */
+        pFloatingPane.startup();
+        parser.parse();
+    });
+</script>
+
+        
+    </head>
+<body class="claro">
+
+<button onclick="showDialog();">View Terms and Conditions</button>
+<div  style="width:100%;height:100%;"  id="terms">
+
+                <span class="tabContainer tabs" data-dojo-props="region:'top'" data-dojo-type="dijit/layout/TabContainer" tabStrip="false" persist="false" controllerWidget="dijit.layout.TabController">
+                    <div data-dojo-type="dijit.layout.ContentPane" title="Services" selected="true">
+                        adfad fasdf asdf asdf
+                    
+                    <p><strong>Please agree to the following terms and conditions:</strong></p>
+                   <button onclick="hideDialog();">I Agree</button>
+                        <button onclick="alert('You must agree!');">I Don't Agree</button>
+                         </div>
+                </span>
+
+
+
+</div>
+
+</body>
+</html>
